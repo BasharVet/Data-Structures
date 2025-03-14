@@ -22,36 +22,55 @@ public class StackArr {
         return top == (capacity - 1);
     }
 
-    public void push(int x) {
+    public void push(int element) {
         if (isFull()) {
-            System.out.println("stack is full! you cant push any elements");
-        } else {
-            top++;
-            A[top] = x;
+            System.out.println("Stack is Full!");
+            System.out.println("-" + element + " wasn't added-");
+            return;
         }
+        top++;
+        A[top] = element;
     }
 
-    public int pop() {
-        if (isEmpty()) {
-            System.out.println("stack is full! you cant pop any elements");
+    public void pop() {
+        int poppedElement = popElement();
+        if(poppedElement==-1){
+            System.out.println("Stack is already Empty! No elements were popped");
+            return;
         }
-        int x = A[top];
+        System.out.println("Element " + poppedElement + " was popped!");
+    }
+
+    private int popElement() {
+        int x = -1;
+        if (isEmpty()) {
+            return -1;
+        }
+
+        x = A[top];
         top--;
 
         return x;
     }
+    
+    public void peak(){
+        int peakElement = peakElement();
+        if(peakElement==-1){
+            System.out.println("Stack is Empty! No elements to peak");
+            return;
+        }
+        System.out.println("the top element: "+peakElement);
+    }
 
-    public int peek() {
+    private int peakElement() {
         if (isEmpty()) {
-            System.out.println("Stack is empty! you cant peek any elements");
+            return -1;
         }
         return A[top];
+
     }
 
     public int length() {
-        if (isEmpty()) {
-            System.out.println("Stack is empty!");
-        }
         return top + 1;
     }
 

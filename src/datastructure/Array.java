@@ -176,6 +176,7 @@ public class Array {
             }
         }
     }
+    
 
     public void insert(int element) {
         if (isFull()) {
@@ -197,7 +198,7 @@ public class Array {
         }
     }
 
-    private int BinarySearch(int e) {
+    private int binarySearchReturn(int element) {
         if (!isEmpty()) {
             int first = 0;
             int last = size - 1;
@@ -206,25 +207,34 @@ public class Array {
             while (first <= last) {
                 mid = (first + last) / 2;
 
-                if (A[mid] == e) {
+                if (A[mid] == element) {
                     return mid;
-                } else if (A[mid] < e) {
+                } else if (A[mid] < element) {
                     first = mid + 1;
                 } else {
                     last = mid - 1;
                 }
             }
 
-            System.out.println("Element is not found!");
-            return -1;
-        } else {
-            System.out.println("List is Empty!!");
+            return -99;
+        }
+        else {
             return -1;
         }
     }
     
-    public void binarySearchVoid(int e){
-        System.out.println("element "+e+" is at index "+BinarySearch(e));
+    public void binarySearch(int element) {
+        int binarySearch = binarySearchReturn(element);
+        
+        if (binarySearch == -99) {
+            System.out.println("Element " + element + " wasn't found!");
+        }
+        else if (binarySearch == -1) {
+            System.out.println("List is Empty!");
+        }
+        else {
+            System.out.println("Element " + element + " found at index " + binarySearch);
+        }
     }
 
 }

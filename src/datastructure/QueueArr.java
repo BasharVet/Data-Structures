@@ -6,16 +6,17 @@ public class QueueArr {
 
     private int capacity;
     private int[] A;
-    private int size;
     private int front;
     private int rear;
+    private int size;
 
     public QueueArr(int capacity) {
-        A = new int[capacity];
         this.capacity = capacity;
-        size = 0;
-        front = 0;
+        A = new int[capacity];
         rear = -1;
+        front = 0;
+        size = 0;
+
     }
 
     public boolean isFull() {
@@ -23,42 +24,61 @@ public class QueueArr {
     }
 
     public boolean isEmpty() {
-        return (rear < front);
+        return rear < front;
     }
 
     public void enque(int element) {
         if (isFull()) {
-            System.out.println("This Queue is Full!");
-        } else {
-            rear++;
-            A[rear] = element;
-            size++;
+            System.out.println("Queue is Full! "+element+" wasn't added");
+            return;
         }
+        rear++;
+        A[rear] = element;
+        size++;
     }
 
-    public int deque() {
-        int x=-1;
-        if (isEmpty()) {
-            System.out.println("This Queue is Empty!");
-        } else {
-            x = A[front];
-            front++;
-            size--;
+    public void deque() {
+        int removedElement = dequeElement();
+        if (removedElement == -1) {
+            System.out.println("Queue is already Empty! No elements were enqueued yet");
+            return;
         }
-        return x;
+        System.out.println("Element " + removedElement + " has been dequeued(removed)");
     }
-    public int first(){
+
+    private int dequeElement() {
+        int x;
+
         if (isEmpty()) {
-            System.out.println("This Queue is Empty!");
+            return -1;
+        }
+
+        x = A[front];
+        front++;
+        size--;
+
+        return x;
+
+    }
+
+    public int length() {
+        return size;
+    }
+
+    public void first() {
+        int firstElement = firstElement();
+        if (firstElement == -1) {
+            System.out.println("Queue is Empty!");
+            return;
+        }
+        System.out.println(firstElement);
+    }
+
+    private int firstElement() {
+        if (isEmpty()) {
             return -1;
         }
         return A[front];
-    }
-    public int length(){
-        return 1+(rear-front);
-    }
-    public int length2(){
-        return size;
     }
 
 }
