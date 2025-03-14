@@ -12,6 +12,27 @@ public class DataStructure {
         
         QueueArr qa = new QueueArr(5);
         
+        System.out.println("*Array:");
+        a.addFirst(4);
+        a.addIn(1, 94);
+        a.addIn(2, 34);
+        a.addIn(3, 12);
+        a.addLast(38);
+        
+        a.display();
+        
+        a.bubbleSort();
+        System.out.println();
+        System.out.println("Bubble sorted Array: ");
+        a.display();
+        
+        System.out.println();
+        a.binarySearch(34);
+        
+        int target =94;
+        a.binarySearch(target);
+        
+        System.out.println();
         System.out.println("*Queue: ");
         qa.enque(3);
         qa.enque(7);
@@ -32,27 +53,7 @@ public class DataStructure {
         sa.peak();
         sa.pop();
         sa.peak();
-        
-        System.out.println();
-        System.out.println("*Array:");
-        a.addFirst(4);
-        a.addIn(1, 94);
-        a.addIn(2, 34);
-        a.addIn(3, 12);
-        a.addLast(38);
-        
-        a.display();
-        
-        a.bubbleSort();
-        System.out.println();
-        System.out.println("Bubble sorted Array: ");
-        a.display();
-        
-        System.out.println();
-        a.binarySearch(34);
-        
-        int target =94;
-        a.binarySearch(target);
+                
         
     }
 }

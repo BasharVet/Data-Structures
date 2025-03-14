@@ -164,7 +164,6 @@ public class Array {
         if (isEmpty()) {
             System.out.println("Array is empty!");
         } else {
-            System.out.println("Bubble Sorted Array: ");
             for (int i = 1; i <= size; i++) {
                 for (int j = 0; j < size - i; j++) {
                     if (A[j] > A[j + 1]) {
