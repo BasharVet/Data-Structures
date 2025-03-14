@@ -144,20 +144,35 @@ public class Array {
         }
         return -1;
     }
+    
+    public void replace(int i, int element){
+        int replacedElement = replaceReturn(i,element);
+        if(replacedElement==-99){
+            System.out.println("Array is Empty!");
+        }
+        else if(replacedElement==-1){
+            System.out.println("index "+i+" is out of bounds!");
+            
+        }
+        else{
+        System.out.println("Element "+replacedElement+" was replaced with the new element "+element);
+        }
+    }
 
-    public int replace(int i, int element) {
+    private int replaceReturn(int i, int element) {
         if (isEmpty()) {
-            System.out.println("Array is empty!");
-        } else {
+            return -99;
+        }
+        else {
             if (i >= 0 && i <= size) {
                 int temp = A[i];
                 A[i] = element;
                 return temp;
             } else {
-                System.out.println("index is out of bounds!");
+                //index is out of bounds
+                return -1;
             }
         }
-        return -1;
     }
 
     public void bubbleSort() {

@@ -14,10 +14,11 @@ public class DataStructure {
         
         System.out.println("*Array:");
         a.addFirst(4);
-        a.addIn(1, 94);
+        a.addIn(1, 61);
         a.addIn(2, 34);
         a.addIn(3, 12);
         a.addLast(38);
+        a.addFirst(25);
         
         a.display();
         
@@ -27,10 +28,19 @@ public class DataStructure {
         a.display();
         
         System.out.println();
-        a.binarySearch(34);
+        a.replace(4,18);
+        System.out.println("Array after replacing: ");
+        a.display();
         
-        int target =94;
-        a.binarySearch(target);
+        System.out.println();
+        System.out.println("Sorted array after replacing: ");
+        a.bubbleSort();
+        a.display();
+        
+        System.out.println();
+        a.binarySearch(12);
+        a.binarySearch(25);
+        a.binarySearch(40);
         
         System.out.println();
         System.out.println("*Queue: ");
