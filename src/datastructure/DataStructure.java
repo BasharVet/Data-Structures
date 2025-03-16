@@ -18,17 +18,23 @@ public class DataStructure {
         a.addIn(2, 34);
         a.addIn(3, 12);
         a.addLast(38);
-        a.addFirst(25);
         
         a.display();
         
         a.bubbleSort();
+        
         System.out.println();
         System.out.println("Bubble sorted Array: ");
         a.display();
         
+        
+        int element=25;
+        System.out.println("\nInserting element "+element);
+        a.insert(element);
+        a.display();
+        
         System.out.println();
-        a.replace(4,18);
+        a.replace(3,9);
         System.out.println("Array after replacing: ");
         a.display();
         
