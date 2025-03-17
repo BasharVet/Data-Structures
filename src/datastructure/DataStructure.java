@@ -30,7 +30,7 @@ public class DataStructure {
         
         int element=25;
         System.out.println("\nInserting element "+element);
-        a.insert(element);
+        a.insert(element);  
         a.display();
         
         System.out.println();
