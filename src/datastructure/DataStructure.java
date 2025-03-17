@@ -6,6 +6,7 @@ public class DataStructure {
 
     
     public static void main(String[] args) {
+        // by Bashar
         Array a = new Array(6);
                 
         StackArr sa = new StackArr(5);
