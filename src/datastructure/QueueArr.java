@@ -37,22 +37,12 @@ public class QueueArr {
         size++;
     }
 
-    public void deque() {
-        int removedElement = dequeElement();
-        if (removedElement == -1) {
-            System.out.println("Queue is already Empty! No elements were enqueued yet");
-            return;
-        }
-        System.out.println("Element " + removedElement + " has been dequeued(removed)");
-    }
-
-    private int dequeElement() {
-        int x;
-
+    public int deque() {
         if (isEmpty()) {
             return -1;
         }
-
+        
+        int x;
         x = A[front];
         front++;
         size--;
@@ -65,16 +55,7 @@ public class QueueArr {
         return size;
     }
 
-    public void first() {
-        int firstElement = firstElement();
-        if (firstElement == -1) {
-            System.out.println("Queue is Empty!");
-            return;
-        }
-        System.out.println(firstElement);
-    }
-
-    private int firstElement() {
+    public int first() {
         if (isEmpty()) {
             return -1;
         }

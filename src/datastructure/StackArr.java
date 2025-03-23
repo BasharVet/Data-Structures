@@ -32,16 +32,7 @@ public class StackArr {
         A[top] = element;
     }
 
-    public void pop() {
-        int poppedElement = popElement();
-        if(poppedElement==-1){
-            System.out.println("Stack is already Empty! No elements were popped");
-            return;
-        }
-        System.out.println("Element " + poppedElement + " was popped!");
-    }
-
-    private int popElement() {
+    public int pop() {
         int x = -1;
         if (isEmpty()) {
             return -1;
@@ -53,16 +44,7 @@ public class StackArr {
         return x;
     }
     
-    public void peak(){
-        int peakElement = peakElement();
-        if(peakElement==-1){
-            System.out.println("Stack is Empty! No elements to peak");
-            return;
-        }
-        System.out.println("the top element: "+peakElement);
-    }
-
-    private int peakElement() {
+    public int peak() {
         if (isEmpty()) {
             return -1;
         }
