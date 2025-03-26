@@ -7,6 +7,7 @@ public class Array {
     private int A[];
     private int capacity;
     private int size;
+    
 
     public Array(int capacity) {
         this.capacity = capacity;
@@ -14,7 +15,6 @@ public class Array {
         A = new int[capacity];
 
     }
-
     public boolean isEmpty() {
         return size == 0;
     }
