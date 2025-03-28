@@ -6,33 +6,46 @@ public class DataStructure {
 
     
     public static void main(String[] args) {
+        
+        FixedFrontQueue ffq = new FixedFrontQueue(5);
+        
+        ffq.enque(3);
+        ffq.enque(13);
+        ffq.enque(15);
+        ffq.enque(19);
+        ffq.enque(23);
+        ffq.display();
+        System.out.println("-");
+        ffq.deque();
+        ffq.display();
+        
         // by Bashar
-        Array a = new Array(6);
-        
-        StackArr sa1 = new StackArr(5);
-        StackArr sa2 = new StackArr(5);
-        StackArr temp = new StackArr(5);
-        
-        QueueArr qa = new QueueArr(5);
-        
-        CirQueue cq = new CirQueue(5);
-        
-        SLLNode linkedList = new SLLNode();
-        linkedList.addFirst(33);
-        linkedList.addFirst(47);
-        linkedList.addFirst(52);
-        linkedList.addLast(64);
-        linkedList.addIn(23,2);
-        linkedList.display();
-        
-        linkedList.delFirst();
-        linkedList.display();
-        
-        linkedList.delLast();
-        linkedList.display();
-        
-        linkedList.delLast();
-        linkedList.display();
+//        Array a = new Array(6);
+//        
+//        StackArr sa1 = new StackArr(5);
+//        StackArr sa2 = new StackArr(5);
+//        StackArr temp = new StackArr(5);
+//        
+//        QueueArr qa = new QueueArr(5);
+//        
+//        CirQueue cq = new CirQueue(5);
+//        
+//        SLLNode linkedList = new SLLNode();
+//        linkedList.addFirst(33);
+//        linkedList.addFirst(47);
+//        linkedList.addFirst(52);
+//        linkedList.addLast(64);
+//        linkedList.addIn(23,2);
+//        linkedList.display();
+//        
+//        linkedList.delFirst();
+//        linkedList.display();
+//        
+//        linkedList.delLast();
+//        linkedList.display();
+//        
+//        linkedList.delLast();
+//        linkedList.display();
         
 //        SLLNode head = new SLLNode();
 //        System.out.println(head.element);

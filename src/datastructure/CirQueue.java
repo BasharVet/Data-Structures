@@ -40,6 +40,12 @@ public class CirQueue {
         System.out.println("The element "+element+" is inserted at index "+rear);
         size++;
     }
+    
+    public void display(){
+        for (int i = front; i <=rear; i++) {
+            System.out.println(A[i]);
+        }
+    }
 
     public int deque() {
         if (isEmpty()) {

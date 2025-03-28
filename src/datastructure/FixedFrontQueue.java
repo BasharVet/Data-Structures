@@ -1,16 +1,14 @@
 
 package datastructure;
 
-
-public class QueueArr {
-
+public class FixedFrontQueue {
     private int capacity;
     private int[] A;
     private int front;
     private int rear;
     private int size;
 
-    public QueueArr(int capacity) {
+    public FixedFrontQueue(int capacity) {
         this.capacity = capacity;
         A = new int[capacity];
         rear = -1;
@@ -26,12 +24,6 @@ public class QueueArr {
     public boolean isEmpty() {
         return rear < front;
     }
-    
-    public void display(){
-        for (int i = front; i <=rear; i++) {
-            System.out.println(A[i]);
-        }
-    }
 
     public void enque(int element) {
         if (isFull()) {
@@ -42,26 +34,36 @@ public class QueueArr {
         A[rear] = element;
         size++;
     }
-
     public int deque() {
+        int x;
+
         if (isEmpty()) {
             return -1;
         }
-        
-        int x;
+
         x = A[front];
-        front++;
+        
+        for (int i = 0; i < rear; i++) {
+            A[i]=A[i+1];
+        }
+        
+        rear--;
         size--;
 
         return x;
 
+    }
+    public void display(){
+        for (int i = front; i <=rear; i++) {
+            System.out.println(A[i]);
+        }
     }
 
     public int length() {
         return size;
     }
 
-    public int first() {
+    public int firstElement() {
         if (isEmpty()) {
             return -1;
         }
@@ -69,3 +71,5 @@ public class QueueArr {
     }
 
 }
+
+
