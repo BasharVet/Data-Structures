@@ -8,7 +8,7 @@ public class DataStructure {
     public static void main(String[] args) {
         // by Bashar
         Array a = new Array(6);
-                
+        
         StackArr sa1 = new StackArr(5);
         StackArr sa2 = new StackArr(5);
         StackArr temp = new StackArr(5);
@@ -23,6 +23,15 @@ public class DataStructure {
         linkedList.addFirst(52);
         linkedList.addLast(64);
         linkedList.addIn(23,2);
+        linkedList.display();
+        
+        linkedList.delFirst();
+        linkedList.display();
+        
+        linkedList.delLast();
+        linkedList.display();
+        
+        linkedList.delLast();
         linkedList.display();
         
 //        SLLNode head = new SLLNode();

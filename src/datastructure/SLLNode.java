@@ -25,6 +25,26 @@ public class SLLNode {
         return head == null;
     }
     
+    public void display(){
+        if(isEmpty()){
+            System.out.println("Linked List is Empty!");
+        }
+        else{
+            SLLNode ptr = head;
+        
+            System.out.print("[");
+            while(ptr != null){
+                System.out.print(ptr.element);
+                if(ptr.next != null){
+                    System.out.print(", ");
+                }
+                ptr = ptr.next;
+            }
+            System.out.print("]");
+            System.out.println();
+        }
+    }
+    
     public void addFirst(int element){
         SLLNode node = new SLLNode(element);
         node.next = head;
@@ -46,7 +66,6 @@ public class SLLNode {
         SLLNode ptr = head;
         
         while(ptr != null){
-            
             if(ptr.element == x){
                 break;
             }
@@ -54,34 +73,43 @@ public class SLLNode {
                 ptr = ptr.next;
             }
         }
+        
         if(ptr == null){
-            System.out.println("element "+x+" isn't found,\nelement "+element+" was added to the first!");
+            System.out.println("Element "+x+" isn't found!,");
+            System.out.println("the Node with the element "+element+" will be added to the first.");
             addFirst(element);
         }
         else{
-            node.next= ptr.next;
+            node.next = ptr.next;
             ptr.next = node;
         }
     }
     
-    public void display(){
+    public void delFirst(){
         if(isEmpty()){
-            System.out.println("Linked List is Empty !");
+            System.out.println("Linked List is Empty!");
+        }
+        else{
+            head = head.next;
+        }
+    }
+    
+    public void delLast() {
+        if (isEmpty()) {
+            System.out.println("Linked List is Empty!");
+        }
+        else if(head.next == null){
+            head = null;
         }
         else{
             SLLNode ptr = head;
             
-            System.out.print("[");
-            while(ptr != null){
-                System.out.print(ptr.element);
-                if(ptr.next != null){
-                    System.out.print(", ");
-                }
+            while(ptr.next.next !=null){
                 ptr = ptr.next;
             }
-            System.out.print("]");
-            System.out.println();
+            ptr.next = null;
         }
+        
+        
     }
-    
 }
