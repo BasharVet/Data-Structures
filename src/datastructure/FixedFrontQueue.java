@@ -35,13 +35,11 @@ public class FixedFrontQueue {
         size++;
     }
     public int deque() {
-        int x;
-
         if (isEmpty()) {
             return -1;
         }
 
-        x = A[front];
+        int x = A[front];
         
         for (int i = 0; i < rear; i++) {
             A[i]=A[i+1];

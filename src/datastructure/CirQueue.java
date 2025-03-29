@@ -55,7 +55,7 @@ public class CirQueue {
         int x;
         x = A[front];
         if (front == (capacity - 1)) {// means if there's only one last element in the Queue
-            front = 0;
+            front = 0; // assign the "front" value to 0
         } else {
             front++;
         }
