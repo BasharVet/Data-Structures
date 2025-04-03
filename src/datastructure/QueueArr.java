@@ -28,9 +28,15 @@ public class QueueArr {
     }
     
     public void display(){
+        System.out.print("[");
         for (int i = front; i <=rear; i++) {
-            System.out.println(A[i]);
+            System.out.print(A[i]);
+            if(i!=rear){
+                System.out.print(", ");
+            }
         }
+        System.out.print("]");
+        System.out.println();
     }
 
     public void enque(int element) {
