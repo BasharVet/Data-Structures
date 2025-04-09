@@ -30,22 +30,24 @@ public class CirQueue {
         }
         // instead of just writing -> rear++;
         // do this logic:
-        if (rear == (capacity - 1)) {// means that the last position in the Queue is occupied
-            rear = 0;
-        } else {
-            rear++;
-        }
+        rear = (rear+1)%capacity;
 
         A[rear] = element;
-        System.out.println("The element "+element+" is inserted at index "+rear);
         size++;
     }
     
     public void display(){
+        if(isEmpty()){
+            System.out.println("Noting to display!");
+            return;
+        }
         System.out.print("[");
-        for (int i = front; i <=rear; i++) {
-            System.out.print(A[i]);
-            if(i!=rear){
+        for (int i = 0; i <size; i++) {
+            int index = (front + i)%capacity;
+            
+            System.out.print(A[index]);
+            
+            if(i!=size-1){
                 System.out.print(", ");
             }
         }
@@ -60,14 +62,13 @@ public class CirQueue {
         }
         int x;
         x = A[front];
-        if (front == (capacity - 1)) {// means if there's only one last element in the Queue
-            front = 0; // assign the "front" value to 0
-        } else {
-            front++;
-        }
+        front = (front+1) %capacity;
         size--;
 
         return x;
 
+    }
+    public int length(){
+        return size;
     }
 }

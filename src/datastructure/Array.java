@@ -1,13 +1,10 @@
-
 package datastructure;
-
 
 public class Array {
 
     private int A[];
     private int capacity;
     private int size;
-    
 
     public Array(int capacity) {
         this.capacity = capacity;
@@ -15,6 +12,7 @@ public class Array {
         A = new int[capacity];
 
     }
+
     public boolean isEmpty() {
         return size == 0;
     }
@@ -144,26 +142,13 @@ public class Array {
         }
         return -1;
     }
-    
-    public void replace(int i, int element){
-        int replacedElement = replaceReturn(i,element);
-        if(replacedElement==-99){
-            System.out.println("Array is Empty!");
-        }
-        else if(replacedElement==-1){
-            System.out.println("index "+i+" is out of bounds!");
-            
-        }
-        else{
-        System.out.println("Element "+replacedElement+" was replaced with the new element "+element);
-        }
-    }
 
-    private int replaceReturn(int i, int element) {
+
+
+    public int replace(int i, int element) {
         if (isEmpty()) {
             return -99;
-        }
-        else {
+        } else {
             if (i >= 0 && i <= size) {
                 int temp = A[i];
                 A[i] = element;
@@ -171,6 +156,20 @@ public class Array {
             } else {
                 //index is out of bounds
                 return -1;
+            }
+        }
+    }
+
+    public void removeDuplicates() {
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (A[i] == A[j]) {
+                    for (int k = j; k < size - 1; k++) {
+                        A[k] = A[k + 1];
+                    }
+                    size--;
+                    j--;
+                }
             }
         }
     }
@@ -190,7 +189,6 @@ public class Array {
             }
         }
     }
-    
 
     public void insert(int element) {
         if (isFull()) {
@@ -212,7 +210,7 @@ public class Array {
         }
     }
 
-    private int binarySearchReturn(int element) {
+    public int binarySearch(int element) {
         if (!isEmpty()) {
             int first = 0;
             int last = size - 1;
@@ -229,26 +227,14 @@ public class Array {
                     last = mid - 1;
                 }
             }
-
+            System.out.println("Element wasn't found!");
             return -99;
-        }
-        else {
+        } else {
+            System.out.println("List is Empty");
             return -1;
         }
     }
+
     
-    public void binarySearch(int element) {
-        int binarySearch = binarySearchReturn(element);
-        
-        if (binarySearch == -99) {
-            System.out.println("Element " + element + " wasn't found!");
-        }
-        else if (binarySearch == -1) {
-            System.out.println("List is Empty!");
-        }
-        else {
-            System.out.println("Element " + element + " found at index " + binarySearch);
-        }
-    }
 
 }
